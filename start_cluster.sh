@@ -12,3 +12,5 @@ else
 fi
 
 
+kubectl cluster-info --context kind-$CLUSTER_NAME
+kubectl get nodes
