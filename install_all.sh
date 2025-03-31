@@ -15,7 +15,6 @@ else
 fi
 
 # verify that kubectl is installed, if not install it
-
 if ! command -v kubectl &> /dev/null
 then
     echo "kubectl could not be found"
@@ -30,7 +29,6 @@ else
 fi
 
 # verify that helm is installed, if not install it
-
 if ! command -v helm &> /dev/null
 then
     echo "helm could not be found"
@@ -41,5 +39,15 @@ then
     rm get_helm.sh
 else
     echo "helm is already installed, version: $(helm version)"
+fi
+
+# verify and install k9s
+if ! command -v k9s &> /dev/null
+then
+    echo "k9s could not be found"
+    echo "installing k9s"
+    curl -sS https://webinstall.dev/k9s | bash
+else
+    echo "k9s is already installed, version: $(k9s version)"
 fi
 
