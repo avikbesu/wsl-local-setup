@@ -8,7 +8,8 @@
   - [ ] postgres
   - [ ] minio
 
-> <u>**How to start?**</u>
+> <h3>How to start?</h3>
+> 
 > ```bash
 > $ ./run.sh 
 >   Usage: ./run.sh <start|stop|status>
