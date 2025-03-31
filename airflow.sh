@@ -11,7 +11,6 @@ helm pull apache-airflow/airflow --untar --destination ./chart
 kubectl apply -f airflow/dags_pv.yaml -n airflow
 kubectl apply -f airflow/dags_pvc.yaml -n airflow
 
-# Install Airflow
 helm install airflow apache-airflow/airflow \
   --namespace airflow --create-namespace \
   --set executor=LocalExecutor \
@@ -20,7 +19,7 @@ helm install airflow apache-airflow/airflow \
   --set dags.gitSync.enabled=false
 
 # port forwarding not working from k9s
-kubectl port-forward airflow-webserver-6cbbf4b88f-vz957 8090:8080 -n airflow
+kubectl port-forward airflow-webserver-7d55647b5d-lvhzl 8090:8080 -n airflow
 
 #uninstall airflow
 helm uninstall airflow --namespace airflow

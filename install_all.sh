@@ -1,3 +1,4 @@
+#/bin/bash
 
 # verify that kind is installed, if not install it
 if ! command -v kind &> /dev/null
