@@ -8,6 +8,16 @@
   - [ ] postgres
   - [ ] minio
 
+> <u>**How to start?**</u>
+> ```bash
+> $ ./run.sh 
+>   Usage: ./run.sh <start|stop|status>
+> ```
+> |Command|Desc|
+> |---|---|
+> |`./run.sh start`|Strat cluster with airflow|
+> |`./run.sh stop`| stop the cluster|
+> |`./run.sh status`| Get cluster status|
 
 ### Commands
 <details>
@@ -48,6 +58,7 @@ flowchart TD
         D
     end
 ```
+Ref: https://airflow.apache.org/docs/helm-chart/stable/manage-dags-files.html#mounting-dags-from-an-externally-populated-pvc
 
 </details>
 
