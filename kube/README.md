@@ -1,4 +1,4 @@
-# Local Setup in WSL
+# Local Custer Setup in WSL
 
 - [x] kind
 - [x] kubectl
