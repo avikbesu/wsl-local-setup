@@ -34,12 +34,14 @@ else
   kubectl create namespace airflow
   kubectl apply -f airflow/dags_pv.yaml -n airflow
   kubectl apply -f airflow/dags_pvc.yaml -n airflow
-  helm install airflow apache-airflow/airflow \
+  helm upgrade --install airflow apache-airflow/airflow \
     --namespace airflow --create-namespace \
-    --set executor=LocalExecutor \
-    --set dags.persistence.enabled=true \
-    --set dags.persistence.existingClaim=dags-pvc \
-    --set dags.gitSync.enabled=false
+    -f airflow/values.yaml \
+    
+    # --set executor=LocalExecutor \
+    # --set dags.persistence.enabled=true \
+    # --set dags.persistence.existingClaim=dags-pvc \
+    # --set dags.gitSync.enabled=false
 
 fi
 
